@@ -20,6 +20,7 @@ app.use((req, res, next) => {
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
+app.use(`/`, express.static(path.join(__dirname, 'public')));
 app.use(`${url}/`, express.static(path.join(__dirname, 'public')));
 
 app.get(`${url}/rates`, async (req, res) => {
